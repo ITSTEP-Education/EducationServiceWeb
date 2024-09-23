@@ -1,4 +1,4 @@
-import { FC } from "react"
+import React, { FC } from "react"
 import { Display } from "../../ui/styled/General.styled";
 import { TitleWrapper, BtnWrapper } from "../../ui/styled/ProductItem.styled";
 import ProductItem from "../ProductItem/ProductItem";
