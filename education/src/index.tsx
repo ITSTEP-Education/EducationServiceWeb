@@ -10,8 +10,9 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <ProductClient />
-    <BtnWrapper>Send order</BtnWrapper>
+    
+    <ProductClient/>
+    <BtnWrapper>SendOrder</BtnWrapper>
   </React.StrictMode>
 );
 

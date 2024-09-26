@@ -12,7 +12,7 @@ interface IProductItemRecord{
 
 const ProductItemRecord: FC<IProductItemRecord> = (props) => {
 
-    if(props._nameProduct == 'none') return;
+    if(props._nameProduct == 'none') return <></>;
 
     return(
         <div style={{width: `${props._width || 500}px` }}>
