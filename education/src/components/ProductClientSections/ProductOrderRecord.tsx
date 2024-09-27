@@ -27,7 +27,7 @@ const ProductOrderRecord: FC<IProductOrderRecord> = (props) => {
     const handleProductOrder = () => {
 
         const productOrderPost = axios.create({
-            baseURL: 'https://localhost:7296/api/ProductItem',
+            baseURL: 'https://localhost:7296/api/Education',
             method: 'post',
             responseType: 'json',
             headers:{
@@ -37,7 +37,7 @@ const ProductOrderRecord: FC<IProductOrderRecord> = (props) => {
     
         let queryName = dictNameToRoute[props.nameProduct == null ? 'none' : props.nameProduct] == undefined ? props.nameProduct : dictNameToRoute[props.nameProduct == null ? 'none' : props.nameProduct];
 
-        productOrderPost.post(`productorder?name=${queryName}`,  props._clientProperty)
+        productOrderPost.post(`product-order-dto?name=${queryName}`,  props._clientProperty)
         .then((responce) => {           
             setProductOrder(responce.data);
         })
