@@ -1,0 +1,18 @@
+.main-section {
+    width: 1240px;
+    height: 779px;
+    margin-top: 140px;
+    margin-left: 190px;
+    background-color: #2b2b2b;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+  }
+  
+
+
+
+
