@@ -1,17 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import reportWebVitals from './reportWebVitals';
-import ProductClient from './blocks/product/ProductClient';
+import Education from './education/blocks/product/Education';
 import "the-new-css-reset";
-import { BtnWrapper } from './ui/styled/ProductItem.styled';
-import Footer from './components/footer/FooterComponent';
+
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <ProductClient/>
+    <Education/>
   </React.StrictMode>
 );
 

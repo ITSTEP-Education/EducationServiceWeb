@@ -1,12 +1,12 @@
 import React, { FC, useState } from 'react';
-import { ProductClientWrapper } from './ProductClient.styled';
-import { TitleWrapper, BtnWrapper } from '../../ui/styled/ProductItem.styled';
+import { EducationWrapper } from './Education.styled';
+import { TitleWrapper, BtnWrapper } from '../../styled/ProductItem.styled';
 import TabProductItemDto from '../../components/ProductItemDto/TabProductItemDto';
 import ProductItemRecord from '../../components/ProductClientSections/ProductItemRecord';
 import ProductOrderRecord from '../../components/ProductClientSections/ProductOrderRecord';
 import OptionsEducation from '../../components/options/OptionsEducation';
 import OptionsInvited from '../../components/options/OptionsInvited';
-import { Display, BlockSpace } from '../../ui/styled/General.styled';
+import { Display, BlockSpace } from '../../styled/General.styled';
 import { optionsForm, optionsPayMethod, optionsPayPeriod } from '../../contexts/ProductItemData';
 import useInvited from '../../utils/useInvited';
 import useEducationOptions from '../../utils/useEducationOptions';
@@ -28,7 +28,7 @@ export type TClientProperty = {
    }
 }
 
-const ProductClient: FC<ProductClientProps> = (): React.FunctionComponentElement<ProductClientProps> => {
+const Education: FC<ProductClientProps> = (): React.FunctionComponentElement<ProductClientProps> => {
 
    const handleClientProps = () => {
       setClientProperty({
@@ -56,7 +56,7 @@ const ProductClient: FC<ProductClientProps> = (): React.FunctionComponentElement
    const [clientProperty, setClientProperty] = useState<TClientProperty | null>(null);
  
    return (
-      <ProductClientWrapper>
+      <EducationWrapper>
          <div style={{width:'335px'}}>
             <Display _justify='none'>
                <TitleWrapper>EDUCATION SUBJECTS</TitleWrapper>
@@ -80,8 +80,8 @@ const ProductClient: FC<ProductClientProps> = (): React.FunctionComponentElement
          </div>
          <BlockSpace/>
          {isOptions? <ProductOrderRecord nameProduct={nameProduct} _clientProperty={clientProperty}/> : <></>}
-      </ProductClientWrapper>
+      </EducationWrapper>
      );
 }
 
-export default ProductClient;
+export default Education;
