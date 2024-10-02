@@ -4,7 +4,6 @@ import reportWebVitals from './reportWebVitals';
 import Education from './education/blocks/product/Education';
 import "the-new-css-reset";
 
-
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
