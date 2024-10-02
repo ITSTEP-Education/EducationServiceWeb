@@ -43,7 +43,6 @@ const TabProductItemDto: FC<ITabProductItemDto> = (props) => {
       console.log('start responce.data');
       productsDto.get('all-productitems-dto').
       then((responce) => {
-
          setProductsItemDto(responce.data);
          for(let product of productsItemDto){
             console.log(product);
@@ -60,7 +59,6 @@ const TabProductItemDto: FC<ITabProductItemDto> = (props) => {
    }
 
    if(!props.isTableLoad) return <></>;
-
    return (
       <TableWrapper id='tab-dbo'>
          <tr>
