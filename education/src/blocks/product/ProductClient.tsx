@@ -80,7 +80,6 @@ const ProductClient: FC<ProductClientProps> = (): React.FunctionComponentElement
          </div>
          <BlockSpace/>
          {isOptions? <ProductOrderRecord nameProduct={nameProduct} _clientProperty={clientProperty}/> : <></>}
-
       </ProductClientWrapper>
      );
 }

@@ -6,7 +6,6 @@ import ProductOrder from "../ProductItem/ProductOrder";
 import { dictNameToRoute } from "../../contexts/ProductItemData";
 import { TClientProperty } from '../../blocks/product/ProductClient';
 
-
 interface IProductOrderRecord{
     _width?: number,
     nameProduct: string | null,
@@ -17,12 +16,13 @@ type TProductItemOrder = {
     name: string,
     typeEngeeniring: string,
     timeStudy: number,
-    sumPay: number,
+    sumPay: number
 }
 
 const ProductOrderRecord: FC<IProductOrderRecord> = (props) => {
 
     const [productOrder, setProductOrder] = useState<TProductItemOrder | null>({name:'none', typeEngeeniring:'none', timeStudy:0, sumPay:0});
+    const [responce, setResponce] = useState<string>('');
 
     const handleProductOrder = () => {
 
@@ -45,18 +45,48 @@ const ProductOrderRecord: FC<IProductOrderRecord> = (props) => {
             setProductOrder(null);
         });       
 
-        // console.log(props._clientProperty);
+        console.log('props._clientProperty');
     }
 
     useEffect(handleProductOrder, [props.nameProduct, props._clientProperty]);
+
+    const handlePostClientOrder = () => {
+        const clientOrderPost = axios.create({
+            baseURL: 'https://localhost:7296/api/v2/Education',
+            method: 'post',
+            responseType: 'json',
+            headers:{
+                'Content-Type': 'application/json'
+            }
+        });
+    
+        clientOrderPost.post('product-order', productOrder)
+        .then((responce) => {
+            console.log(responce.data);
+            setResponce(responce.data);
+        })
+        .catch((error) => {
+            setResponce('error');
+        });
+    }
+
+    const handleResponce = (): string =>{
+        if (responce == '') return 'JUST ORDER IT';
+        else if (responce == 'error') return 'TRY AGAIN';
+        
+        return `ORDER: ${responce}`;
+    }
 
     return(
         <div style={{width: `${props._width || 500}px`}}>
             <Display _justify='none'>
                 <TitleWrapper style={{width:'450px', textAlign: 'center'}}>ORDER DETAILS</TitleWrapper>
-                <BtnWrapper onClick={handleProductOrder} disabled={true}>SHOW</BtnWrapper>
+                <BtnWrapper onClick={handleProductOrder} disabled={true}>PROPOSAL</BtnWrapper>
             </Display>
             <ProductOrder _productOrder={productOrder}/>
+            <Display _justify='none'>
+                <TitleWrapper onClick={handlePostClientOrder} style={{width:'500px', textAlign: 'center', cursor: 'pointer'}} bgColor="#db6030">{handleResponce()}</TitleWrapper>
+            </Display>
         </div>
     );
 }
