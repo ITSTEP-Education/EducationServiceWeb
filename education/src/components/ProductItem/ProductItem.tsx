@@ -33,7 +33,7 @@ const ProductItem: FC<NameProductItem> = (props) => {
     const [productItem, setProductItem] = useState<ProductItemProps | null>(null);
 
     const productItemGet = axios.create({
-        baseURL: 'https://localhost:7296/api/Education',
+        baseURL: 'https://localhost:7296/api/v1/Education',
         method: 'get',
         responseType: 'json',
     });

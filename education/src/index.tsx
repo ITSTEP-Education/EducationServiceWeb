@@ -6,12 +6,11 @@ import "the-new-css-reset";
 import { BtnWrapper } from './ui/styled/ProductItem.styled';
 import Footer from './components/footer/FooterComponent';
 
-
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
-  <React.StrictMode>   
+  <React.StrictMode>
     <ProductClient/>
     <BtnWrapper>SendOrder</BtnWrapper>
     <Footer/>

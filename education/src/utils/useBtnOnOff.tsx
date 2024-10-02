@@ -10,7 +10,6 @@ const useBtnOnOff = (flag: boolean): [boolean, (e: React.FormEvent<HTMLElement>)
         setIsOnOff(!isOnOff);
     };
     // eslint-disable-next-line @typescript-eslint/no-unused-expressions
-
     useEffect(() => {handleIsOnOff}, []);
 
     return [isOnOff, handleIsOnOff];

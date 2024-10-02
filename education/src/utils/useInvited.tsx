@@ -11,7 +11,6 @@ const useInvited = (_handleClientProps:()=>void): [boolean, (e: React.FormEvent<
         _handleClientProps();
     };
     // eslint-disable-next-line @typescript-eslint/no-unused-expressions
-
     useEffect(() => {handleInvited}, []);
 
     return [isInvited, handleInvited];
