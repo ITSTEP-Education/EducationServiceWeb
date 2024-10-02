@@ -34,7 +34,7 @@ const TabProductItemDto: FC<ITabProductItemDto> = (props) => {
    const [productsItemDto, setProductsItemDto] = useState<Array<IProductItemDto | null>>([]);
 
    const productsDto = axios.create({
-      baseURL: 'https://localhost:7296/api/Education',
+      baseURL: 'https://localhost:7296/api/v2/Education',
       method: 'get',
       responseType: 'json',
    });

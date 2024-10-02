@@ -27,7 +27,7 @@ const ProductOrderRecord: FC<IProductOrderRecord> = (props) => {
     const handleProductOrder = () => {
 
         const productOrderPost = axios.create({
-            baseURL: 'https://localhost:7296/api/Education',
+            baseURL: 'https://localhost:7296/api/v1/Education',
             method: 'post',
             responseType: 'json',
             headers:{
