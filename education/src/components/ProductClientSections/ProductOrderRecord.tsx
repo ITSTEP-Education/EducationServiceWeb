@@ -36,7 +36,7 @@ const ProductOrderRecord: FC<IProductOrderRecord> = (props) => {
         });
     
         let queryName = dictNameToRoute[props.nameProduct == null ? 'none' : props.nameProduct] == undefined ? props.nameProduct : dictNameToRoute[props.nameProduct == null ? 'none' : props.nameProduct];
-
+      
         productOrderPost.post(`product-order-dto?name=${queryName}`,  props._clientProperty)
         .then((responce) => {           
             setProductOrder(responce.data);

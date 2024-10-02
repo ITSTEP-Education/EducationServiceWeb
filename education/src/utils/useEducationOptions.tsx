@@ -10,6 +10,7 @@ const useEducationOptions = ( option: string, _handleClientProps:()=>void ): [st
         _handleClientProps();
     };
     // eslint-disable-next-line @typescript-eslint/no-unused-expressions
+
     useEffect(() => {handleOption}, []);
 
     return [payPeriod, handleOption];

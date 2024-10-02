@@ -11,6 +11,7 @@ const useNameProduct = (_handleClientProps:()=>void ): [string, (e: React.FormEv
         _handleClientProps();
     };
     // eslint-disable-next-line @typescript-eslint/no-unused-expressions
+
     useEffect(() => {handleNameProduct}, []);
 
     return [nameProduct != null? nameProduct : 'none', handleNameProduct];

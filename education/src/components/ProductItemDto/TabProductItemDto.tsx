@@ -31,6 +31,7 @@ const Product = (product: IProductItemDto | null,
 
 const TabProductItemDto: FC<ITabProductItemDto> = (props) => {
 
+
    const [productsItemDto, setProductsItemDto] = useState<Array<IProductItemDto | null>>([]);
 
    const productsDto = axios.create({
@@ -43,7 +44,6 @@ const TabProductItemDto: FC<ITabProductItemDto> = (props) => {
       console.log('start responce.data');
       productsDto.get('all-productitems-dto').
       then((responce) => {
-
          setProductsItemDto(responce.data);
          for(let product of productsItemDto){
             console.log(product);
@@ -60,7 +60,6 @@ const TabProductItemDto: FC<ITabProductItemDto> = (props) => {
    }
 
    if(!props.isTableLoad) return <></>;
-
    return (
       <TableWrapper id='tab-dbo'>
          <tr>
