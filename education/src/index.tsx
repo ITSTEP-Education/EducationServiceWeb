@@ -4,14 +4,17 @@ import reportWebVitals from './reportWebVitals';
 import ProductClient from './blocks/product/ProductClient';
 import "the-new-css-reset";
 import { BtnWrapper } from './ui/styled/ProductItem.styled';
+import Footer from './components/footer/FooterComponent';
+
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
-  <React.StrictMode>
-    <ProductClient />
-    <BtnWrapper>Send order</BtnWrapper>
+  <React.StrictMode>   
+    <ProductClient/>
+    <BtnWrapper>SendOrder</BtnWrapper>
+    <Footer/>
   </React.StrictMode>
 );
 

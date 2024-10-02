@@ -33,7 +33,7 @@ const ProductItem: FC<NameProductItem> = (props) => {
     const [productItem, setProductItem] = useState<ProductItemProps | null>(null);
 
     const productItemGet = axios.create({
-        baseURL: 'https://localhost:7296/api/ProductItem',
+        baseURL: 'https://localhost:7296/api/Education',
         method: 'get',
         responseType: 'json',
     });
@@ -41,7 +41,7 @@ const ProductItem: FC<NameProductItem> = (props) => {
     let queryName = dictNameToRoute[props.nameProduct == null ? 'none' : props.nameProduct] == undefined ? props.nameProduct : dictNameToRoute[props.nameProduct == null ? 'none' : props.nameProduct];
 
     useEffect(() => {
-        productItemGet.get(`productitem?name=${queryName}`)
+        productItemGet.get(`product-item?name=${queryName}`)
         .then((responce) => {
             
             setProductItem(responce.data);

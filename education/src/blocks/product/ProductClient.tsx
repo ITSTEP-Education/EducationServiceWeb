@@ -57,7 +57,6 @@ const ProductClient: FC<ProductClientProps> = (): React.FunctionComponentElement
  
    return (
       <ProductClientWrapper>
-
          <div style={{width:'335px'}}>
             <Display _justify='none'>
                <TitleWrapper>EDUCATION SUBJECTS</TitleWrapper>

@@ -10,6 +10,7 @@ const useEngineerType = (_handleClientProps:()=>void ): [string, (e: React.FormE
         setNameProduct(e.currentTarget.getElementsByTagName('td')[2].textContent);
         _handleClientProps();
     };
+    // eslint-disable-next-line @typescript-eslint/no-unused-expressions
 
     useEffect(() => {handleNameProduct}, []);
 

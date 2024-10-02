@@ -19,7 +19,8 @@ const Product = (product: IProductItemDto | null,
    handleNameProduct: (e: React.FormEvent<HTMLElement>) => void,
    handleEngineerType: (e: React.FormEvent<HTMLElement>) => void): React.ReactElement => {
 
-   return (
+      return (
+      // eslint-disable-next-line @typescript-eslint/no-unused-expressions
       <tr onClick={(e) => {handleNameProduct(e), handleEngineerType(e)}}>
          <td>{product?.id}</td>
          <td>{product?.name}</td>
@@ -30,18 +31,17 @@ const Product = (product: IProductItemDto | null,
 
 const TabProductItemDto: FC<ITabProductItemDto> = (props) => {
 
-   if (!props.isTableLoad) return;
 
    const [productsItemDto, setProductsItemDto] = useState<Array<IProductItemDto | null>>([]);
 
    const productsDto = axios.create({
-      baseURL: 'https://localhost:7296/api/ProductItem',
+      baseURL: 'https://localhost:7296/api/Education',
       method: 'get',
       responseType: 'json',
    });
 
    useEffect(() => {
-       
+      console.log('start responce.data');
       productsDto.get('all-productitems-dto').
       then((responce) => {
          setProductsItemDto(responce.data);
@@ -59,6 +59,7 @@ const TabProductItemDto: FC<ITabProductItemDto> = (props) => {
       rowProducts.push(Product(product, props._handleNameProduct, props._handleEngineerType));
    }
 
+   if(!props.isTableLoad) return <></>;
    return (
       <TableWrapper id='tab-dbo'>
          <tr>
